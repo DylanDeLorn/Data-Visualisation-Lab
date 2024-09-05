@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Journey</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #EDE4E3;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        header {
+            margin: 0;
+            background-color: gainsboro;
+            padding: 1px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        nav {
+            margin-top: 20px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        nav button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: rgb(15, 4, 132);
+            border: 1px solid black;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        nav a, nav button a {
+            text-decoration: none;
+            color: white;
+        }
+        nav button:hover {
+            background-color: #9a95d7;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            margin-top: -15px;
+            font-size: 120%;
+        }
+        p {
+            margin-left: 40%;
+            margin-right: 20%;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            flex-shrink: 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffcccb;
+            border-left: 6px solid #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>D3 Journey starts here</h1>
+            <h2>Author: Wong De Lorn</h2>
+        </header>
+        <nav>
+            <button><a href="lab2.1.html">Lab 2.1</a></button>
+            <button><a href="lab2.2.html">Lab 2.2</a></button>
+            <button><a href="lab2.3.html">Lab 2.3</a></button>
+            <button><a href="lab2.4.html">Lab 2.4</a></button>
+        </nav>
+        <div id="d3-content"></div>
+    </div>
+    <footer>COS30045 Data Visualisation<br>Wong De Lorn</footer>
+
+    <script>
+        var dataset = [14, 5, 26, 23, 9];
+        d3.select("#d3-content").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .style("color", function(d) {
+                return d > 10 ? "red" : "black"; //styles it red if > 10
+            })
+            .text(function(d) {
+                return (d > 10 ? "Warning: " : "") + "NAME watched " + d + " cat videos today."; //adds Warning prefix if > 10
+            });
+
+        console.log(d3.selectAll("p"));
+    </script>
+</body>
+</html>
