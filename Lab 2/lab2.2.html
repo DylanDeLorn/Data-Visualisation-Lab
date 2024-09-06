@@ -135,7 +135,7 @@
                     .attr("pad", padding)
                     .attr("fill", "rgb(106, 90, 205)");
         
-        svg.selectAll("rect")
+        svg.selectAll("rect") //creates rectangle
             .data(dataset)
             .enter()
             .append("rect")
@@ -152,7 +152,7 @@
                 return d * 4
             });
 
-            svg.selectAll("text")
+            svg.selectAll("text") //label for rectangles
                 .data(dataset)
                 .enter()
                 .append("text")

@@ -124,7 +124,7 @@
         var w = 550;
         var h = 150;
 
-        var dataset = [
+        var dataset = [ //3rd element on the array adjust the size
             [5, 20, 5],
             [480, 90, 10],
             [100, 33, 11],
@@ -143,7 +143,7 @@
                     .attr("height", h)
                     .attr("fill", "rgb(106, 90, 205)");
         
-        svg.selectAll("circle")
+        svg.selectAll("circle") //creates circle
             .data(dataset)
             .enter()
             .append("circle")
@@ -157,7 +157,7 @@
             return d[2];  // radius based on array subposition 2. -> [0, 1, 2]
             })
             .attr("fill", function(d) {
-            //Conditional to style red 
+            //Conditional to style red data points
             if (d[0] < 200) {  
                 return "red";
             } else {
