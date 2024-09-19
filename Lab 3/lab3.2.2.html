@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-	<meta name="description"	content="Lab 2.1"/>
+	<meta name="description"	content="Lab 3.2.2"/>
 	<meta name="keywords"		  content="HTML, CSS, D3"/>
 	<meta name="author"			  content="Wong De Lorn"/>
 
-    <title>Task 3.1 Scaling Your Chart - Scatter Plot</title>
+    <title>Task 3.2 Scatter Plot with Axis</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="lab3.2.2.js" defer></script>
     <style>
         html, body {
             height: 100%;
@@ -32,7 +33,7 @@
         }
 
         nav {
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 30px;
         text-align: center; /* Center the buttons horizontally */
         }
@@ -79,8 +80,8 @@
         }
 
         p {
-            margin-left: 80%;
-            margin-right: 20%
+            display: flex;
+            justify-content: center;
         }
 
         a {
@@ -119,7 +120,7 @@
 <body>
     <div class="content">
         <header>
-            <h1>Scaling with Data- Scatter Plot</h1>
+            <h1>Drawing with Data- Scatter Plot with Axis (Modified)</h1>
             <h2>Author: Wong De Lorn</h2>
         </header>
         <nav>
@@ -131,91 +132,9 @@
             <button> <a href="lab3.2.2.html">Lab 3.2.2</a> </button>
 
         </nav>
+        <p>The following is a modified version of original Lab3-2 with axis label.</p>
         <div class="chart-container"></div>
     </div>
-    <script>
-        var w = 550;
-        var h = 150;
-        padding = 55; //20,90,33,95,12,44,67,21,88,50
-
-        var dataset = [
-            [5, 20, 5],
-            [100, 33, 4],
-            [330, 95, 5],
-            [410, 12, 6],
-            [475, 44, 11],
-            [25, 67, 4],
-            [85, 21, 4],
-            [220, 88, 9],
-            [250, 50, 4],
-            [500, 90, 5]
-        ];
-        
-        var xScale = d3.scaleLinear()
-                        .domain([d3.min(dataset, function(d) {
-                            return d[0];
-                        }),
-                        d3.max(dataset, function(d) {
-                            return d[0];
-                        })])
-                        .range([padding, w - padding]);
-
-        var yScale = d3.scaleLinear()    
-                        .domain([d3.min(dataset, function(d) {
-                            return d[1];
-                        }),
-                        d3.max(dataset, function(d) {
-                            return d[1];
-                        })])
-                        .range([h - padding, padding]);
-
-        var svg = d3.select(".chart-container")
-                    .append("svg")
-                    .attr("width", w)
-                    .attr("height", h)
-                    .attr("fill", "rgb(106, 90, 205)");
-        
-        svg.selectAll("circle")
-            .data(dataset)
-            .enter()
-            .append("circle")
-            .attr("cx", function(d, i) {
-                return xScale(d[0]);
-            })
-            .attr("cy", function(d) {
-            return yScale(d[1]);
-            })
-
-            .attr("r", function(d) {
-            return d[2];  // radius based on array subposition 2. -> [0, 1, 2]
-            })
-            .attr("fill", function(d) {
-            //Conditional to style red 
-            if (d[0] < 200) {  
-                return "red";
-            } else {
-                return "slategrey";  
-            }
-            })
-
-            svg.selectAll("text")
-                .data(dataset)
-                .enter()
-                .append("text")
-                .text(function(d) {
-                    return d[0] + "," +d[1];
-                })
-            
-                //Labelling
-            .attr("x", function(d) {
-                return xScale(d[0]) +10;
-            })
-            .attr("y", function(d) {
-            return yScale(d[1]);
-            });
-
-
-    </script>
     <br>
     <footer>COS30045 Data Visualisation<br>Wong De Lorn</footer>
 </body>
