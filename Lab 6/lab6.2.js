@@ -178,7 +178,7 @@ d3.select("button.add")
 var sortBars = function() {
     sortOrder = !sortOrder;
 
-    // Sort the dataset array
+    //to sort
     if (sortOrder) {
         dataset.sort(d3.ascending);
     } else {

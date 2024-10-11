@@ -51,7 +51,7 @@ svg.selectAll("text") //label for rectangles
     });
     
 
-// Add the functionality to add data points from lab6.1.js
+//add data points
 d3.select("button.add")
   .on("click", function() {
     var maxValue = 25;

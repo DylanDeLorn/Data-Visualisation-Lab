@@ -93,10 +93,10 @@ d3.select("button.update")
             });
     });
 
-    d3.select("button.t1")
+    d3.select("button.t1")  //first transition
     .on("click", function() {
         var numValues = dataset.length;
-        var maxValue = 25;
+        var maxValue = 25;  //max amount of value asked in lab
         dataset = [];
 
         for (var i=0; i < numValues; i++) {
@@ -104,10 +104,10 @@ d3.select("button.update")
             dataset.push(newNumber);
         }
 
-        // Update the y-scale domain to accommodate potential new maximum values
+        //this updates the y-axis to accommodate potential new maximum values
         yScale.domain([0, d3.max(dataset)]);
 
-        svg.selectAll("rect") // Update rectangles
+        svg.selectAll("rect")
             .data(dataset)
             .transition()
             .delay(function(d, i) {

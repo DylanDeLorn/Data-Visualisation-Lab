@@ -70,7 +70,6 @@ var svg = d3.select(".chart-container")
                 //return "The value is " + d + ".";
             //});  
 
-// Add the functionality to add data points from lab6.1.js
 d3.select("button.add")
   .on("click", function() {
     var maxValue = 25;
