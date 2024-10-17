@@ -1,5 +1,5 @@
 var w = 800;
-var h = 500;
+var h = 400;
 
 var projection = d3.geoMercator()
                     .center([145, -36.5])
@@ -21,9 +21,10 @@ d3.json("LGA_VIC.json").then(function(json) {
         .attr("d", path);
 
         svg.append("text")
-        .attr("x", w / 2) // Center the title horizontally
-        .attr("y", 20) // Adjust the vertical position as needed
-        .attr("text-anchor", "middle") // Center the text around the 'x' position
-        .style("font-size", "16px") // Adjust font size as needed
+        .attr("x", w / 2) 
+        .attr("y", 20) 
+        .attr("text-anchor", "middle") 
+        .style("font-size", "29px") 
+        .style("color", "black")
         .text("Victorian LGA Map");
 });
