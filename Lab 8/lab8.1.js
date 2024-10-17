@@ -1,10 +1,10 @@
-var w = 1600;
-var h = 800;
+var w = 600;
+var h = 400;
 
 var projection = d3.geoMercator()
                     .center([145, -36.5])
                     .translate([w/2, h/2])
-                    .scale(2450);
+                    .scale(4900);
 var path = d3.geoPath()
             .projection(projection);
 var svg = d3.select(".chart-container")
