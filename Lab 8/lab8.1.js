@@ -1,5 +1,5 @@
-var w = 800;
-var h = 400;
+var w = 1600;
+var h = 800;
 
 var projection = d3.geoMercator()
                     .center([145, -36.5])
