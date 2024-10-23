@@ -9,7 +9,7 @@
     <title>Task 8.1 D3 Geo Paths and Projections</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-        html, body {
+         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
@@ -32,12 +32,12 @@
 
         nav {
         margin-top: 20px;
-        margin-bottom: 30px;
         text-align: center; /* Center the buttons horizontally */
         }
 
         nav button {
             margin: 0 10px;
+            margin-bottom: 20px;
             padding: 10px 20px;
             background-color: rgb(15, 4, 132);
             border: 1px solid black; /* Add a border if needed */
@@ -77,11 +77,6 @@
             font-size: 120%;
         }
 
-        p {
-            margin-left: 80%;
-            margin-right: 20%
-        }
-
         a {
             color: #007bff;
             text-decoration: none;
@@ -90,12 +85,7 @@
         a:hover {
             text-decoration: underline;
         }
-        .chart-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 2%;
-        margin-right: 10px;
-        }
+
         footer {
             flex-shrink: 0;
             padding: 10px;
@@ -113,6 +103,21 @@
             border-radius: 5px;
             cursor: pointer; /* Make the button cursor a pointer */
         }
+
+        #chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            width: 100%;  /* Make sure it takes full width */
+        }
+
+        /* Add specific styling for the map SVG */
+        #chart svg {
+            display: block;  /* Important for centering */
+            margin: 0 auto;  /* Center horizontally */
+        }
     </style>
 </head>
 <body>
@@ -128,7 +133,7 @@
                 <button> <a href="lab8.1.html">Lab 8.1</a> </button>
                 <button> <a href="lab8.2.html">Lab 8.2</a> </button>
             </nav>
-            <div class="chart-container">
+            <p id="chart"></p>
                 <!-- empty on purpose -->
             </div>
     </div>

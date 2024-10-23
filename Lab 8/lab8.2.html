@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="description"	content="Data Visualisation"/>
-	<meta name="keywords"		  content="HTML,CSS,D3,Data Import"/>
+    <meta charset="UTF-8"/>
+	<meta name="description"	content="Lab 8.2"/>
+	<meta name="keywords"		  content="HTML, CSS, D3"/>
 	<meta name="author"			  content="Wong De Lorn"/>
 
-	<title>Task 7.2 D3 Pie Chart</title>
-	<script src="https://d3js.org/d3.v7.min.js"></script>
-	<!--js Script-->
-	<style>
-
-        html, body {
+    <title>Task 8.2 D3 Choropleths</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
@@ -80,12 +77,6 @@
             font-size: 120%;
         }
 
-        p {
-            margin-top: 2%;
-            margin-left: 18%;
-            margin-right: 10%;
-        }
-
         a {
             color: #007bff;
             text-decoration: none;
@@ -114,33 +105,41 @@
         }
 
         #chart {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            width: 100%;  /* Make sure it takes full width */
+        }
+
+        /* Add specific styling for the map SVG */
+        #chart svg {
+            display: block;  /* Important for centering */
+            margin: 0 auto;  /* Center horizontally */
+        }
     </style>
 </head>
-
 <body>
     <div class="content">
         <header>
-            <h1>Lab 7.2 D3 Pie Chart</h1>
-            <h2>Author: Wong De Lorn</h2>
+            <h1>D3 Choropleths</h1>
+      
         </header>
-        <nav>
-            <button class="toc"> <a href="../index.html">Table of Content</a></button>
-        </nav>
-        <nav>
-            <button> <a href="lab7.1.html">Lab 7.1</a> </button>
-            <button> <a href="lab7.2.html">Lab 7.2</a> </button>
-            <button> <a href="lab7.3.html">Lab 7.3</a> </button>
-        </nav>
-            <!--chart is displayed above footer-->
+            <nav>
+                <button class="toc"> <a href="../index.html">Table of Content</a></button>
+            </nav>
+            <nav>
+                <button> <a href="lab8.1.html">Lab 8.1</a> </button>
+                <button> <a href="lab8.2.html">Lab 8.2</a> </button>
+            </nav>
             <p id="chart"></p>
+                <!-- empty on purpose -->
+            </div>
     </div>
-        <script src="lab7.2.js"></script>
-        <footer>COS30045 Data Visualisation<br>Wong De Lorn</footer>
+    
+    <br>
+    <script src="lab8.2.js"></script>
+    <footer>COS30045 Data Visualisation<br>Wong De Lorn</footer>
 </body>
 </html>
