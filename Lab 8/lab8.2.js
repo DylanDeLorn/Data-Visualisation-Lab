@@ -77,7 +77,11 @@ d3.csv("VIC_city.csv").then(function(cityData) {
             })
             .attr("r", 5)
             .style("fill", "blue") 
-            .style("stroke", "black"); 
+            .style("stroke", "black")
+            .append("title")
+            .text(function(d) {
+                return d.place;
+            }); 
 
         svg.append("text")
             .attr("x", w / 2)
